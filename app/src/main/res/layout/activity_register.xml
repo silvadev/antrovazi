@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context="ga.devel.silva.antrovazi.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/etRName"
+                android:text="@string/register_name_label" />
+
+            <EditText
+                android:id="@+id/etRName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/register_name_input_description"
+                android:ems="10"
+                android:inputType="textAutoComplete|textPersonName" />
+
+            <TextView
+                android:id="@+id/tvRCpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/etRCpf"
+                android:text="@string/register_cpf_label" />
+
+            <EditText
+                android:id="@+id/etRCpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/register_cpf_input_description"
+                android:ems="10"
+                android:inputType="textAutoComplete|number" />
+
+            <TextView
+                android:id="@+id/tvRAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/etRAge"
+                android:text="@string/register_age_label" />
+
+            <EditText
+                android:id="@+id/etRAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/register_age_input_description"
+                android:ems="10"
+                android:inputType="textAutoComplete|textPersonName|number" />
+
+            <TextView
+                android:id="@+id/tvRPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/etRPhone"
+                android:text="@string/register_phone_label" />
+
+            <EditText
+                android:id="@+id/etRPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/register_phone_input_description"
+                android:ems="10"
+                android:inputType="textAutoComplete|phone" />
+
+            <TextView
+                android:id="@+id/tvRMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/etRMail"
+                android:text="@string/register_mail_label" />
+
+            <EditText
+                android:id="@+id/etRMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/register_mail_input_description"
+                android:ems="10"
+                android:inputType="textAutoComplete|textWebEmailAddress" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/btAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_button_register"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/register_button_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btAdd" />
+
+                <Button
+                    android:id="@+id/btBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/register_button_back"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btList" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Antrovazi</string>
+    <string name="app_description">
+        <b>ánthrōpos •</b> <i>(grego - ἄνθρωπος) <u>m</u></i>: ser humano; gente
+        \n<b>básis •</b> <i>(grego - βάσις) <u>f</u></i>: base, fundação
+        \n\nEste é o <b>Antrovazi</b> como descrito acima é uma <b>base de pessoas</b>, um sistema de cadastro para pessoas físicas.
+    </string>
+    <string name="app_author">
+        <b>Instituto Federal de São Paulo - Campus Sertãozinho</b>
+        \n<b>Curso: </b>Programação de Computadores e Dispositivos Móveis
+        \n<b>Disciplina: </b>M4DADM
+        \n<b>Aluno: </b>Ivanildo José da Silva Filho
+    </string>
+    <string name="app_version">Versão: 0.5.3</string>
+    <string name="app_button_register">Cadastrar Pessoa</string>
+
+    <string name="title_activity_register">Register</string>
+    <string name="register_name_label">Nome</string>
+    <string name="register_name_input_description">Insira um nome completo.</string>
+    <string name="register_cpf_label">CPF</string>
+    <string name="register_cpf_input_description">Insira um CPF com 11 dígitos.</string>
+    <string name="register_age_label">Idade</string>
+    <string name="register_age_input_description">Insira a idade.</string>
+    <string name="register_phone_label">Telefone</string>
+    <string name="register_phone_input_description">Insira um número de telefone.</string>
+    <string name="register_mail_label">E-mail</string>
+    <string name="register_mail_input_description">Insira um endereço de e-mail.</string>
+    <string name="register_button_add">Inserir Dados</string>
+    <string name="register_button_list">Listar Registros</string>
+    <string name="register_button_back">Voltar</string>
+</resources>
