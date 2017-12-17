@@ -1,5 +1,6 @@
 package ga.devel.silva.antrovazi;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -74,8 +75,19 @@ public class RegisterActivity extends AppCompatActivity {
 
                     return;
                 }
-                for () {
-
+                for (int i =0; i<personList.size(); i++) {
+                    Person person = personList.get(i);
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);
+                    alertDialog.setTitle("CPF: " + person.getCpf());
+                    alertDialog.setMessage("Nome: " + person.getName() + "\nIdade: " + person.getAge() +
+                    "\nTelefone: " + person.getPhone() + "\nE-mail: " + person.getEmail());
+                    alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+                    alertDialog.show();
                 }
             }
         });
