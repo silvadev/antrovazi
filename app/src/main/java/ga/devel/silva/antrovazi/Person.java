@@ -5,6 +5,7 @@ package ga.devel.silva.antrovazi;
  */
 
 public class Person {
+    // Classe de pessoas. Nela se relacionam o banco de dados com o resto da aplicação.
 
     private String cpf;
     private String name;
@@ -13,6 +14,7 @@ public class Person {
     private String email;
 
     Person (String cpf, String name, String age, String phone, String email) {
+        // Método construtor
         this.cpf = cpf;
         this.name = name;
         this.age = age;
@@ -20,6 +22,7 @@ public class Person {
         this.email = email;
     }
 
+    // Abaixo estão criados os métodos setters e getters dos dados das pessoas.
     public String getCpf() {
         return cpf;
     }

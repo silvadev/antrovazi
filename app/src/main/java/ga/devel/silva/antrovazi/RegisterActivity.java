@@ -12,6 +12,7 @@ import android.widget.EditText;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
+    // Esta Activity é usada para consultas e registros no banco de dados.
 
     private DataBase dataBase;
 
@@ -25,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         this.dataBase = new DataBase(this);
 
+        // Abaixo os dados dos botões e caixa de texto são passadas para variáveis locais.
         etRCpf = findViewById(R.id.etRCpf);
         etRName = findViewById(R.id.etRName);
         etRAge = findViewById(R.id.etRAge);
@@ -35,9 +37,11 @@ public class RegisterActivity extends AppCompatActivity {
         btList = findViewById(R.id.btList);
         btBack = findViewById(R.id.btBack);
 
+        // Caso clicado o botão bt.Add executa a adição dos dados no banco de dados.
         btAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Se todos os campos estiverem completos os dados são adicionados ao banco de dados e é retornando mensagem de sucesso.
                 if (etRCpf.getText().length() > 0 && etRName.getText().length() > 0
                         && etRAge.getText().length() > 0 && etRPhone.getText().length() > 0
                         && etRMail.getText().length() > 0) {
@@ -54,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                     etRCpf.setText("");
                     etRName.setText("");
                 }
+                // Caso contrário é mostrada mensagem de erro.
                 else {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);
                     alertDialog.setTitle("Erro");
@@ -63,10 +68,12 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        // Caso clicado o botão bt.List mostra os dados no banco de dados.
         btList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 List<Person> personList = dataBase.queryAll();
+                // Se não houver registros é mostrada uma mensagem.
                 if (personList == null) {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);
                     alertDialog.setTitle("Mensagem");
@@ -75,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     return;
                 }
+                // Caso contrário é mostrado uma mensagem para cada pessoa cadastrada.
                 for (int i =0; i<personList.size(); i++) {
                     Person person = personList.get(i);
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);
@@ -92,6 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        // // Caso clicado o botão bt.Back volta a tela inicial.
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,6 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    // O método faz com que a aplicação volte a tela inicial.
     void callMain() {
         Intent intent = new Intent();
         intent.setClass(RegisterActivity.this, MainActivity.class);

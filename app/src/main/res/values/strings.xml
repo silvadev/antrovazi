@@ -11,7 +11,7 @@
         \n<b>Disciplina: </b>M4DADM
         \n<b>Aluno: </b>Ivanildo José da Silva Filho
     </string>
-    <string name="app_version">Versão: 0.5.3</string>
+    <string name="app_version">Versão: 0.7.1</string>
     <string name="app_button_register">Cadastrar Pessoa</string>
 
     <string name="title_activity_register">Register</string>

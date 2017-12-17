@@ -14,6 +14,7 @@ import java.util.List;
  */
 
 public class DataBase {
+    // Esta classe é usada para operações no banco de dados.
 
     private static final String DB_NAME = "antrovazi.db";
     private static final int DB_VERSION = 1;
@@ -23,9 +24,10 @@ public class DataBase {
     private SQLiteDatabase db;
 
     private SQLiteStatement insertStmt;
-    private static final String DB_INSERT = "insert into " + DB_TABLE + " (cpf, name, age, phone, email) values (?, ?, ?, ?, ?)";
+    private static final String DB_INSERT = "INSERT INTO " + DB_TABLE + " (cpf, name, age, phone, email) values (?, ?, ?, ?, ?)";
 
     public DataBase(Context context) {
+        // Método contrutor da classe.
         this.context = context;
         OpenHelper openHelper = new OpenHelper(this.context);
         this.db = openHelper.getWritableDatabase();
@@ -33,24 +35,29 @@ public class DataBase {
     }
 
     public long insert (String cpf, String name, String age, String phone, String email) {
-        this.insertStmt.bindString(0, cpf);
-        this.insertStmt.bindString(1, name);
-        this.insertStmt.bindString(2, age);
-        this.insertStmt.bindString(3, phone);
-        this.insertStmt.bindString(4, email);
+        // Este método insere as informações no banco de dados.
+        this.insertStmt.bindString(1, cpf);
+        this.insertStmt.bindString(2, name);
+        this.insertStmt.bindString(3, age);
+        this.insertStmt.bindString(4, phone);
+        this.insertStmt.bindString(5, email);
 
         return this.insertStmt.executeInsert();
     }
 
     public List<Person> queryAll () {
+        // Este método gera uma lista com todos os dados do banco de dados.
         List<Person> personList = new ArrayList<Person>();
         try {
+            // O try...catch é usado para tentar fazer a execução no banco de dados.
             Cursor cursor = this.db.query(DB_TABLE, new String[]{"cpf", "name", "age", "phone", "email"},
-                    null, null, null, null, null, null);
+                    null, null, null, null, "name", null);
             int records = cursor.getCount();
             if (records != 0) {
+                // Se houver registros então armazenamos os dados na lista.
                 cursor.moveToFirst();
                 do {
+                    // Enquanto houver dados na requisição o do...while adiciona os dados na lista.
                     Person person = new Person(cursor.getString(0),
                             cursor.getString(1), cursor.getString(2),
                             cursor.getString(3), cursor.getString(4));
@@ -59,6 +66,7 @@ public class DataBase {
                 while (cursor.moveToNext());
 
                 if (cursor !=null && ! cursor.isClosed()) {
+                    // Ao final o cursor é fechado.
                     cursor.close();
                 }
                 return personList;
@@ -73,11 +81,12 @@ public class DataBase {
     }
 
     private static class OpenHelper extends SQLiteOpenHelper {
+        // Esta classe cria e atualiza a tabela.
         OpenHelper (Context context) {
             super(context, DB_NAME, null, DB_VERSION);
         }
         public void onCreate (SQLiteDatabase db) {
-            String sql = "CREATE TABLE IF NOT EXISTS" + DB_TABLE +
+            String sql = "CREATE TABLE IF NOT EXISTS " + DB_TABLE +
                     " (cpf INTEGER PRIMARY KEY, name TEXT, age INTEGER, phone TEXT, email TEXT);";
             db.execSQL(sql);
         }
