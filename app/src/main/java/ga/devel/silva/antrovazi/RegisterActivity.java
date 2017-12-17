@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.List;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private DataBase dataBase;
@@ -56,6 +58,24 @@ public class RegisterActivity extends AppCompatActivity {
                     alertDialog.setTitle("Erro");
                     alertDialog.setMessage("Todos os campos devem ser preenchidos.");
                     alertDialog.show();
+                }
+            }
+        });
+
+        btList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                List<Person> personList = dataBase.queryAll();
+                if (personList == null) {
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(RegisterActivity.this);
+                    alertDialog.setTitle("Mensagem");
+                    alertDialog.setMessage("Não há registros cadastrados.");
+                    alertDialog.show();
+
+                    return;
+                }
+                for () {
+
                 }
             }
         });
